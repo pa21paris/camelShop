@@ -1,0 +1,197 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+/* header styles */
+
+header{
+    width: 100%;
+    height: 60px;
+    background-color: #C28CAE;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header button{
+    font-size: 1.6rem;
+    font-family: Ubuntu;
+    font-weight: 300;
+    background-color: transparent;
+    border: 0px;
+}
+
+.filters-button, .sell-button{
+    width: 100px;
+    height: 40px;
+    border: 1px solid #895E79;
+    border-radius: 50px;
+}
+
+.logout-button{
+    text-decoration: underline;
+}
+
+/* main styles */
+
+main{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-family: Ubuntu;
+    align-items: center;
+    padding-top: 20px;
+}
+.camel-item{
+    width: 270px;
+    height: 80px;
+    background-color: #C28CAE;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    column-gap: 10px;
+}
+
+.camel-item img{
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+.camel-item p{
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.camel-item h2{
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+
+/* Footer styles */
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+footer button{
+    width: 30px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 1px solid #999999;
+    transform: rotate(90deg);
+}
+
+/* Filters styles */
+
+.filters{
+    position: absolute;
+    width: 320px;
+    height: 425px;
+    top:0;
+    transform: translateY(-425px);
+    background-color: #C28CAE;
+    padding: 20px 40px 30px 40px;
+    border-bottom: 1px solid black;
+    transition: all 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.filters h2{
+    font-family: Ubuntu;
+    font-size: 3.6rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.filters form{
+    width: 100%;
+    height: 314px;
+    display: grid;
+    grid-template-columns: 100px 40px 100px;
+    grid-template-areas: 
+    "breed . humps"
+    "age . weight"
+    "color . canfly"
+    "apply apply apply";
+    grid-auto-rows: max-content;
+    row-gap: 20px;
+    font-family: Ubuntu;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.field-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.field-container input{
+    width: 100px;
+    height: 40px;
+    background-color: #BA7BA1;
+    border: 0.5px solid black;
+    border-radius: 50px;
+    padding-left: 10px;
+}
+
+.breed{
+    grid-area: breed;
+}
+
+.humps{
+    grid-area: humps;
+}
+
+.age{
+    grid-area: age;
+}
+
+.weight{
+    grid-area: weight;
+}
+
+.color{
+    grid-area: color;
+}
+
+.canfly{
+    grid-area: canfly;
+}
+
+#apply-button{
+    margin-top: 10px;
+    grid-area: apply;
+    font-size: 2rem;
+    font-weight: 500;
+    width: 150px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #EDCF8E;
+    border: 1px solid black;
+    justify-self: center;
+    align-self: end;
+}
+
+.filters-button:hover + .filters{
+    transform: translateY(0px);
+}
+
+.filters:hover{
+    transform: translateY(0px);
+}
+

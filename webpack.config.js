@@ -10,7 +10,8 @@ module.exports = {
     entry: {
         main:'./src/index.ts',
         login:'./src/login.ts',
-        register:'./src/register.ts'
+        register:'./src/register.ts',
+        list:'./src/list.ts'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -46,6 +47,12 @@ module.exports = {
             template: path.join(__dirname, 'public','register.html'),
             filename: 'register.html',
             chunks:['register'],
+            inject:true
+        }),
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname,'public','list.html'),
+            filename: 'list.html',
+            chunks:['list'],
             inject:true
         }),
         new MiniCssExtractPlugin(),
