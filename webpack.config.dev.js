@@ -5,10 +5,14 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     mode:'development',
-    entry: './src/index.ts',
+    entry: {
+        main:'./src/index.ts',
+        login:'./src/login.ts',
+        register:'./src/register.ts'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name]bundle.js'
     },
     module: {
         rules: [
@@ -27,7 +31,21 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject:true,
             template: path.join(__dirname, 'public','index.html'),
-            filename: 'index.html'
+            filename: 'index.html',
+            chunks:['main'],
+            inject:true
+        }),
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'public','login.html'),
+            filename: 'login.html',
+            chunks:['login'],
+            inject:true
+        }),
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'public','register.html'),
+            filename: 'register.html',
+            chunks:['register'],
+            inject:true
         }),
         new MiniCssExtractPlugin(),
         new CleanWebpackPlugin.CleanWebpackPlugin()

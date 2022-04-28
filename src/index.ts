@@ -1,4 +1,4 @@
-import './styles/main.css';
+import './styles/index.css';
 console.log("hola");
 console.log("chau");
-console.log("IZI");
+console.log("IZI2");
