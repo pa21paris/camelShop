@@ -1,2 +1,2 @@
 import './styles/general_styles.css'
-import './styles/login.css'
+import './styles/sell.css';

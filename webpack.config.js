@@ -11,7 +11,9 @@ module.exports = {
         main:'./src/index.ts',
         login:'./src/login.ts',
         register:'./src/register.ts',
-        list:'./src/list.ts'
+        list:'./src/list.ts',
+        camel:'./src/camel.ts',
+        sell:'./src/sell.ts'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -53,6 +55,18 @@ module.exports = {
             template: path.join(__dirname,'public','list.html'),
             filename: 'list.html',
             chunks:['list'],
+            inject:true
+        }),
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'public','camel.html'),
+            filename: 'camel.html',
+            chunks:['camel'],
+            inject:true
+        }),
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname,'public','sell.html'),
+            filename: 'sell.html',
+            chunks:['sell'],
             inject:true
         }),
         new MiniCssExtractPlugin(),
